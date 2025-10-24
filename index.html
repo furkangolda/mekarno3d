@@ -1,96 +1,54 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Mekarno 3D</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #222244, #0d0d0d);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      color: #fff;
-    }
-
-    .logo-text {
-      font-size: 72px;
-      color: #ffcc00;
-      text-shadow:
-        0 0 10px #ffcc00,
-        0 0 20px #ffcc00,
-        0 0 30px #ffcc00,
-        0 0 40px #ffaa00,
-        0 0 70px #ffaa00;
-      animation: neonPulse 2s ease-in-out infinite alternate;
-      margin-bottom: 40px;
-      letter-spacing: 3px;
-    }
-
-    h1 {
-      font-size: 50px;
-      margin-bottom: 60px;
-      color: #fff;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    a {
-      display: block;
-      font-size: 36px;
-      margin: 20px 0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s, color 0.3s;
-      animation: fadein 1.5s ease;
-    }
-
-    a:hover {
-      transform: scale(1.1);
-      filter: brightness(120%);
-    }
-
-    a:nth-of-type(1) { color: #ff5050; }   /* Trendyol */
-    a:nth-of-type(2) { color: #ff9900; }   /* Hepsiburada */
-    a:nth-of-type(3) { color: #e1306c; }   /* Instagram */
-    a:nth-of-type(4) { color: #69c9d0; }   /* TikTok */
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ffffff; }
-      to { text-shadow: 0 0 20px #bbbbbb; }
-    }
-
-    @keyframes fadein {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes neonPulse {
-      from { text-shadow: 0 0 15px #ffcc00, 0 0 25px #ffaa00; opacity: 0.8; }
-      to { text-shadow: 0 0 25px #ffff66, 0 0 45px #ffcc33; opacity: 1; }
-    }
+    body{font-family:'Poppins',sans-serif;height:100vh;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(-45deg,#0d0d0d,#1a1a1a,#222244,#0d0d0d);background-size:400% 400%;animation:gradientMove 12s ease infinite;color:#fff}
+    .logo-text{font-size:72px;color:#ffcc00;text-shadow:0 0 10px #ffcc00,0 0 20px #ffcc00,0 0 30px #ffcc00,0 0 40px #ffaa00,0 0 70px #ffaa00;animation:neonPulse 2s ease-in-out infinite alternate;margin-bottom:40px;letter-spacing:3px}
+    h1{font-size:50px;margin-bottom:50px;animation:glow 2s ease-in-out infinite alternate}
+    .links{display:flex;flex-direction:column;gap:25px}
+    .link-item{display:flex;align-items:center;justify-content:center;gap:15px;font-size:36px;font-weight:bold;text-decoration:none;transition:transform .3s,filter .3s;animation:fadein 1.5s ease}
+    .link-item img{width:60px;height:60px;border-radius:50%;box-shadow:0 0 20px rgba(255,255,255,.2);animation:logoPulse 3s ease-in-out infinite;transition:transform .3s,box-shadow .3s;background:#fff}
+    .link-item:hover{transform:scale(1.1);filter:brightness(120%)}
+    .link-item:hover img{transform:scale(1.25);box-shadow:0 0 30px currentColor,0 0 60px currentColor}
+    .trendyol{color:#ff5050}.instagram{color:#e1306c}.tiktok{color:#69c9d0}
+    @keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    @keyframes glow{from{text-shadow:0 0 10px #fff}to{text-shadow:0 0 20px #bbb}}
+    @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes neonPulse{from{text-shadow:0 0 15px #ffcc00,0 0 25px #ffaa00;opacity:.8}to{text-shadow:0 0 25px #ffff66,0 0 45px #ffcc33;opacity:1}}
+    @keyframes logoPulse{0%,100%{box-shadow:0 0 15px currentColor,0 0 30px rgba(255,255,255,.1);transform:scale(1)}50%{box-shadow:0 0 25px currentColor,0 0 50px currentColor;transform:scale(1.1)}}
   </style>
 </head>
 <body>
   <div class="logo-text">Mekarno 3D</div>
   <h1>Hazırlanıyor...</h1>
-  
-  <a href="https://www.trendyol.com" target="_blank">Trendyol</a>
-  <a href="https://www.hepsiburada.com" target="_blank">Hepsiburada</a>
-  <a href="https://www.instagram.com" target="_blank">Instagram</a>
-  <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+
+  <div class="links">
+    <!-- Trendyol (PNG fallback) -->
+    <a class="link-item trendyol" href="https://ty.gl/iwj2mxg63bjqi" target="_blank">
+      <img
+        src="https://www.aldkapi.com/wp-content/uploads/2022/07/trendyol-logo.png"
+        alt="Trendyol Logosu" referrerpolicy="no-referrer" />
+      Trendyol
+    </a>
+
+    <!-- Instagram (zaten PNG) -->
+    <a class="link-item instagram" href="https://www.instagram.com/mekarno3d?igsh=anU3cXZlazdrYnQz&utm_source=qr" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        alt="Instagram Logosu" referrerpolicy="no-referrer" />
+      Instagram
+    </a>
+
+    <!-- TikTok (PNG fallback) -->
+    <a class="link-item tiktok" href="https://www.tiktok.com/@mekarno3d8?_t=ZS-90p5VKGwyHA&_r=1" target="_blank">
+      <img
+        src="https://www.citypng.com/public/uploads/preview/tiktok-logo-video-tik-tok-sign-symbol-musically-701751694793257u2hyk7qhnv.png"
+        alt="TikTok Logosu" referrerpolicy="no-referrer" />
+      TikTok
+    </a>
+  </div>
 </body>
 </html>
